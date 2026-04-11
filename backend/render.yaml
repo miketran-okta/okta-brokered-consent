@@ -1,0 +1,13 @@
+services:
+  - type: web
+    name: devops-agent-backend
+    runtime: python
+    plan: free
+    buildCommand: pip install --upgrade pip && pip install -r requirements.txt
+    startCommand: uvicorn api.main:app --host 0.0.0.0 --port $PORT
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.10.15
+      - key: PORT
+        value: 8000
+    # Add your environment variables in Render dashboard

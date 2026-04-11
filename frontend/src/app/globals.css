@@ -1,0 +1,129 @@
+@import "tailwindcss";
+
+/* DevOps Agent Theme (matching ProGear style) */
+body {
+  background: linear-gradient(to bottom, #0d0d14, #1a1a2e);
+  min-height: 100vh;
+}
+
+/* Smooth animations */
+* {
+  transition-property: background-color, border-color, box-shadow;
+  transition-duration: 150ms;
+  transition-timing-function: ease-in-out;
+}
+
+/* Custom scrollbar for DevOps theme */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #2d1f3d;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #5a3468;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #7c4a8a;
+}
+
+/* Chat message styling */
+.chat-message h1 {
+  @apply font-bold mt-2 mb-1;
+}
+
+.chat-message h2 {
+  @apply font-bold mt-2 mb-1;
+}
+
+.chat-message h3 {
+  @apply font-bold mt-2 mb-1;
+}
+
+.chat-message strong {
+  @apply font-semibold text-white;
+}
+
+.chat-message code {
+  @apply bg-gray-800 px-1.5 py-0.5 rounded text-sm text-indigo-300;
+}
+
+.chat-message table {
+  @apply w-full border-collapse my-2;
+}
+
+.chat-message th,
+.chat-message td {
+  @apply border border-gray-700 px-3 py-1.5 text-sm;
+}
+
+.chat-message th {
+  @apply bg-gray-800 font-semibold;
+}
+
+.chat-message ul {
+  @apply list-disc list-inside my-1;
+}
+
+.chat-message li {
+  @apply my-0.5;
+}
+
+/* Typing indicator animation */
+@keyframes typing {
+  0% { opacity: 0.2; }
+  20% { opacity: 1; }
+  100% { opacity: 0.2; }
+}
+
+.typing-dot {
+  animation: typing 1.4s infinite;
+}
+
+.typing-dot:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+.typing-dot:nth-child(3) {
+  animation-delay: 0.4s;
+}
+
+/* Fade in animation for collapsible sections */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fadeIn {
+  animation: fadeIn 0.3s ease-out;
+}
+
+/* Glow effect on hover */
+.glow-on-hover:hover {
+  box-shadow: 0 0 20px rgba(99, 102, 241, 0.4);
+}
+
+/* Pulse glow effect */
+@keyframes pulseGlow {
+  0%, 100% {
+    box-shadow: 0 0 10px rgba(99, 102, 241, 0.3);
+  }
+  50% {
+    box-shadow: 0 0 20px rgba(99, 102, 241, 0.6);
+  }
+}
+
+.animate-pulse-glow {
+  animation: pulseGlow 2s ease-in-out infinite;
+}
