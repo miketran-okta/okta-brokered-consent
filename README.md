@@ -212,6 +212,9 @@ cd backend
 
 # Create Python virtual environment (Python 3.10+)
 python -m venv venv
+# or python3 depending on your environment setup
+python3 -m venv venv
+
 source venv/bin/activate  # On Windows: venv\Scripts\activate
 
 # Install dependencies
@@ -256,6 +259,8 @@ LOG_LEVEL=INFO
 
 ```bash
 python -m uvicorn api.main:app --reload --port 8000
+# or python 3
+python3 -m uvicorn api.main:app --reload --port 8000
 ```
 
 **Verify health:**
