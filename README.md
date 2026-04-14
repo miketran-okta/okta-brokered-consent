@@ -67,16 +67,10 @@ Unlike traditional OAuth where each application manages its own consent flow, OA
 
 ### Required Accounts & Access
 
-- ✅ **Okta**: OIE org with `SECURE_AI_AGENTS` and `SECURE_AI_OAUTH_STS` features enabled
+- ✅ **Okta**: OIE org with `SECURE_AI_AGENTS` features enabled
 - ✅ **GitHub**: Account or organization with admin access
 - ✅ **LiteLLM Proxy**: API key and base URL for LLM routing
 - ✅ **Development Tools**: Node.js 18+, Python 3.10+
-
-### Important Notes
-
-⚠️ **OAuth-STS Requirement**: This demo requires Okta OIE (Identity Engine) with OAuth-STS feature enabled. Contact your Okta Customer Success Manager (CSM) or Solutions Engineer (SE) if you need this feature enabled on your org.
-
-⚠️ **Training Environment**: This demo uses **read-only** GitHub permissions for safety in training environments.
 
 ---
 
@@ -139,7 +133,9 @@ cd okta-brokered-consent
 1. **Applications** → **Browse App Catalog**
 2. **Search:** `GitHub Enterprise Cloud`
 3. **Add** GitHub Enterprise Cloud - Organization
-4. **Save** (we'll update with GitHub credentials in step 3.4)
+4. GitHub Organization: enter any value
+5. Assign your user under assignments
+6. **Save** (we'll update with GitHub credentials in step 3.4)
 
 ---
 
