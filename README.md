@@ -157,10 +157,7 @@ cd okta-brokered-consent
 2. **Managed connections** tab → **Add connection**
 3. **Configure:**
    - **Resource type:** Application
-   - **Application Instance:** Select the GitHub app from step 2.3
-   - **Resource Indicator:** Choose format
-     - ORN format: `orn:oktapreview:idp:00xxxxx:client-auth-settings:rsxxxxx`
-     - Custom format: `your-org:github:application`
+   - **Application Instance:** Select the GitHub app from step 2.3   
 4. **Save** and copy:
    - ✅ **Resource Indicator** - you'll need this for backend config
 
