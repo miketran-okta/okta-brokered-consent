@@ -139,18 +139,6 @@ cd okta-brokered-consent
 
 ---
 
-#### 2.4 Create Managed Connection
-
-1. Go to your AI Agent: **Directory** → **AI Agents** → **[DevOps Agent]**
-2. **Managed connections** tab → **Add connection**
-3. **Configure:**
-   - **Resource type:** Application
-   - **Application Instance:** Select the GitHub app from step 2.3   
-4. **Save** and copy:
-   - ✅ **Resource Indicator** - you'll need this for backend config
-
----
-
 ### 3. GitHub Configuration
 
 #### 3.1 Create GitHub App
@@ -204,7 +192,15 @@ cd okta-brokered-consent
    - **Client Secret:** Paste GitHub App Client Secret
 5. **Save**
 
-✅ **OAuth-STS setup complete!** Okta can now exchange tokens for GitHub access.
+#### 3.5 Create Managed Connection
+
+1. Go to your AI Agent: **Directory** → **AI Agents** → **[DevOps Agent]**
+2. **Managed connections** tab → **Add connection**
+3. **Configure:**
+   - **Resource type:** Application
+   - **Application Instance:** Select the GitHub app from step 2.3   
+4. **Save** and copy:
+   - ✅ **Resource Indicator** - you'll need this for backend config
 
 ---
 
@@ -235,7 +231,7 @@ OKTA_ISSUER=https://your-org.oktapreview.com
 OKTA_AI_AGENT_ID=wlp...
 OKTA_AI_AGENT_PRIVATE_KEY={"kty":"RSA","kid":"...","use":"sig",...}
 
-# GitHub Resource Indicator (from step 2.4)
+# GitHub Resource Indicator (from step 3.5)
 OKTA_GITHUB_RESOURCE_INDICATOR=orn:oktapreview:idp:00xxxxx:client-auth-settings:rsxxxxx
 
 # GitHub Configuration
