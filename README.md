@@ -1,4 +1,4 @@
-# DevOps Agent - Okta OAuth-STS Demo
+# DevOps Agent - Okta Brokered Consent Demo
 
 > AI-powered DevOps assistant demonstrating **Okta Brokered Consent (OAuth-STS)** for secure GitHub integration
 
@@ -10,11 +10,11 @@
 
 ---
 
-## What is OAuth-STS?
+## What is Okta Brokered Consent?
 
-**OAuth-STS (OAuth Security Token Service)** is Okta's implementation of **Brokered Consent**, enabling AI agents to securely access external SaaS applications (like GitHub and Jira) on behalf of users with proper consent and governance.
+**Okta Brokered Consent** enables AI agents to securely access external SaaS applications (like GitHub and Jira) on behalf of users with proper consent and governance.
 
-Unlike traditional OAuth where each application manages its own consent flow, OAuth-STS centralizes consent management in Okta. Users grant permission once through Okta's familiar interface, and the AI agent can then exchange the user's ID token for service-specific access tokens.
+Unlike traditional OAuth where each application manages its own consent flow, Okta Brokered Consent centralizes consent management in Okta. Users grant permission once through Okta's familiar interface, and the AI agent can then exchange the user's ID token for service-specific access tokens.
 
 **Why this matters for AI agents:**
 - 🔐 **Centralized Governance** - IT admins control which AI agents can access which services
@@ -33,7 +33,7 @@ Unlike traditional OAuth where each application manages its own consent flow, OA
 │  (User UI)   │ ◀───────────────  │  (LangGraph) │
 └──────────────┘   Response +       └──────────────┘
                    Agent Flow              │
-                                          │ OAuth-STS
+                                          │ Okta Brokered Consent
                                           │ Token Exchange
                                           ▼
                                    ┌──────────────┐
@@ -54,7 +54,7 @@ Unlike traditional OAuth where each application manages its own consent flow, OA
 **Flow:**
 1. User logs in via Okta OIDC (receives ID token)
 2. User requests GitHub operation through AI agent
-3. Backend exchanges ID token for GitHub access token via OAuth-STS
+3. Backend exchanges ID token for GitHub access token via Okta Brokered Consent
 4. First time: User authorizes via consent popup
 5. GitHub operation executes with exchanged token
 6. AI generates natural language response
@@ -114,7 +114,7 @@ cd okta-brokered-consent
 1. **Directory** → **AI Agents** → **Create AI Agent**
 2. **Configure:**
    - **Name:** `DevOps Agent`
-   - **Description:** `GitHub integration via OAuth-STS`
+   - **Description:** `GitHub integration via Okta Brokered Consent`
    - **Owner:** Select an owner (requires Access Governance SKU)
 3. **Generate Key Pair:**
    - Click **"Generate public/private key pair"**
@@ -156,7 +156,7 @@ cd okta-brokered-consent
      
      ℹ️ **Replace** `demo-takolive-sb.oktapreview.com` with **YOUR** Okta org domain
      
-     ℹ️ **The path** `/oauth2/v1/sts/callback` **is the standard Okta OAuth-STS callback endpoint** (not a placeholder!)
+     ℹ️ **The path** `/oauth2/v1/sts/callback` **is the standard Okta Okta Brokered Consent callback endpoint** (not a placeholder!)
       
    - **Webhook:** ❌ Uncheck "Active" (not needed for this demo)
 
@@ -307,7 +307,7 @@ npm run dev
 
 ---
 
-### 6. Test OAuth-STS Flow
+### 6. Test Okta Brokered Consent Flow
 
 #### First-Time User Flow
 
@@ -326,7 +326,7 @@ No authorization needed - token is cached by Okta:
 - `"List pull requests in [repo-name]"`
 - `"Show open issues in [repo-name]"`
 
-The OAuth-STS flow only requires user consent **once per service**. After that, tokens are exchanged transparently in the background.
+The Okta Brokered Consent flow only requires user consent **once per service**. After that, tokens are exchanged transparently in the background.
 
 ---
 
@@ -339,7 +339,7 @@ The OAuth-STS flow only requires user consent **once per service**. After that, 
 | **GitHub App** | `https://YOUR-OKTA-DOMAIN.oktapreview.com/oauth2/v1/sts/callback` | GitHub App settings → Callback URL |
 | **Okta OIDC App** | `http://localhost:3000/api/auth/callback/okta` | Okta OIDC app → Sign-in redirect URIs |
 
-⚠️ **Important:** The GitHub callback URL path `/oauth2/v1/sts/callback` is the **standard Okta OAuth-STS endpoint** - this is NOT a placeholder! Only replace the domain portion with your Okta org domain.
+⚠️ **Important:** The GitHub callback URL path `/oauth2/v1/sts/callback` is the **standard Okta Okta Brokered Consent endpoint** - this is NOT a placeholder! Only replace the domain portion with your Okta org domain.
 
 **Example:**
 - ❌ Wrong: `https://YOUR-OKTA-DOMAIN/callback`
@@ -427,7 +427,7 @@ Once set up, try these natural language commands:
 - **TypeScript** - Type safety and developer experience
 
 ### Integration
-- **Okta OAuth-STS** - Brokered consent and token exchange
+- **Okta Okta Brokered Consent** - Brokered consent and token exchange
 - **GitHub REST API** - Repository operations
 - **LiteLLM Proxy** - AI response generation
 
@@ -438,7 +438,7 @@ Once set up, try these natural language commands:
 | Document | Description |
 |----------|-------------|
 | [Implementation Setup Guide](docs/IMPLEMENTATION_SETUP_GUIDE.md) | Detailed step-by-step setup with troubleshooting |
-| [Architecture Documentation](docs/architecture.md) | Technical architecture and OAuth-STS flow details |
+| [Architecture Documentation](docs/architecture.md) | Technical architecture and Okta Brokered Consent flow details |
 | [CLAUDE.md](CLAUDE.md) | AI assistant developer guidance |
 | [Full README](docs/README_FULL.md) | Original comprehensive README with all details |
 
@@ -448,7 +448,7 @@ Once set up, try these natural language commands:
 
 ✅ **User Consent Required** - Users must explicitly authorize GitHub access through Okta  
 ✅ **Token Revocation** - Users can revoke access anytime in Okta user settings  
-✅ **Audit Trail** - All OAuth-STS token exchanges logged in Okta system logs  
+✅ **Audit Trail** - All Okta Brokered Consent token exchanges logged in Okta system logs  
 ✅ **No Secrets in Frontend** - Only public OIDC client ID exposed to browser  
 ✅ **JWT-Based Authentication** - Agent authenticates with RS256-signed JWTs  
 ✅ **Time-Limited Tokens** - GitHub tokens expire per app settings (supports refresh)  
@@ -456,11 +456,11 @@ Once set up, try these natural language commands:
 
 ---
 
-## OAuth-STS vs ID-JAG
+## Okta Brokered Consent vs ID-JAG
 
 Okta offers two token exchange mechanisms for AI agents:
 
-| Feature | OAuth-STS (This Demo) | ID-JAG |
+| Feature | Okta Brokered Consent (This Demo) | ID-JAG |
 |---------|----------------------|---------|
 | **Purpose** | External SaaS access (GitHub, Jira, Office 365) | Internal API access (enterprise microservices) |
 | **Target Services** | Third-party applications in OIN catalog | Custom Authorization Servers in Okta |
@@ -480,7 +480,7 @@ Okta offers two token exchange mechanisms for AI agents:
 - 🏗️ **Architecture Questions:** [Architecture Documentation](docs/architecture.md)
 
 ### Debugging
-- **Backend logs:** Check terminal output for OAuth-STS exchange details
+- **Backend logs:** Check terminal output for Okta Brokered Consent exchange details
 - **Frontend errors:** Open browser console (F12) for JavaScript errors
 - **Health check:** `curl http://localhost:8000/health`
 - **API docs:** http://localhost:8000/docs
@@ -511,11 +511,11 @@ This is a reference implementation for Okta enablement training. Feel free to:
 ## Resources
 
 - **Okta Developer Docs:** https://developer.okta.com/
-- **OAuth-STS Guide:** https://developer.okta.com/docs/guides/configure-oauth-sts/
+- **Okta Brokered Consent Guide:** https://developer.okta.com/docs/guides/configure-oauth-sts/
 - **GitHub Apps:** https://docs.github.com/en/apps
 - **LangGraph:** https://github.com/langchain-ai/langgraph
 - **LiteLLM:** https://docs.litellm.ai
 
 ---
 
-**Made for Okta enablement training** • Demonstrates OAuth-STS (Brokered Consent) for AI agent security and governance
+**Made for Okta enablement training** • Demonstrates Okta Brokered Consent (Brokered Consent) for AI agent security and governance
