@@ -85,8 +85,8 @@ Unlike traditional OAuth where each application manages its own consent flow, OA
 ### 1. Clone Repository
 
 ```bash
-git clone https://github.com/your-org/oauth-sts-demo.git
-cd oauth-sts-demo
+git clone https://github.com/miketran-okta/okta-brokered-consent.git
+cd okta-brokered-consent
 ```
 
 ---
