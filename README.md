@@ -138,16 +138,8 @@ cd okta-brokered-consent
 
 1. **Applications** → **Browse App Catalog**
 2. **Search:** `GitHub Enterprise Cloud`
-3. **Add** one of:
-   - GitHub Enterprise Cloud - Organization
-   - GitHub Enterprise Cloud - EMU
-   - GitHub Enterprise Cloud
-4. **Resource Server Tab** (critical for OAuth-STS):
-   - Navigate to the **"Resource server"** tab
-   - **Client ID:** [Leave empty - will fill from GitHub app in next section]
-   - **Client Secret:** [Leave empty - will fill from GitHub app in next section]
-   - **Scopes:** Leave empty for this demo
-5. **Save** (we'll update with GitHub credentials in step 3.4)
+3. **Add** GitHub Enterprise Cloud - Organization
+4. **Save** (we'll update with GitHub credentials in step 3.4)
 
 ---
 
@@ -181,8 +173,7 @@ cd okta-brokered-consent
      ℹ️ **Replace** `demo-takolive-sb.oktapreview.com` with **YOUR** Okta org domain
      
      ℹ️ **The path** `/oauth2/v1/sts/callback` **is the standard Okta OAuth-STS callback endpoint** (not a placeholder!)
-   
-   - **Expire user authorization tokens:** ✅ **CHECK THIS** (enables refresh tokens)
+      
    - **Webhook:** ❌ Uncheck "Active" (not needed for this demo)
 
 ---
@@ -190,12 +181,7 @@ cd okta-brokered-consent
 #### 3.2 Set Permissions (Read-Only for Training)
 
 **Repository permissions:**
-- **Contents:** Read-only
-- **Issues:** Read-only
-- **Pull requests:** Read-only
-- **Metadata:** Read-only (automatically included)
-
-ℹ️ **Note:** This demo uses **read-only** permissions for safety in training environments. The agent can view repositories, pull requests, and issues but cannot modify them. For production use cases requiring write access, you can adjust these permissions.
+- **Contents:** Access: Read and write
 
 **Where can this app be installed?**
 - Choose: **"Only on this account"** (recommended for training)
@@ -209,11 +195,6 @@ cd okta-brokered-consent
 2. **Generate Client Secret:**
    - Click **"Generate a new client secret"**
    - Copy the secret (shown only once!)
-3. **Install the App:**
-   - Go to **"Install App"** section
-   - Click **"Install"**
-   - Select repositories (all or specific)
-   - **Authorize**
 
 ---
 
