@@ -69,12 +69,13 @@ Unlike traditional OAuth where each application manages its own consent flow, Ok
 
 - ✅ **Okta**: OIE org with `SECURE_AI_AGENTS` features enabled
 - ✅ **GitHub**: Account or organization with admin access
-- ✅ **LiteLLM Proxy**: API key and base URL for LLM routing
 - ✅ **Development Tools**: Node.js 18+, Python 3.10+
 
 ---
 
-## Quick Start
+### 0.a LiteLLM
+
+You need a LiteLLM API key from https://llm.atko.ai/.  Request access [(Link)](https://okta.okta.com/enduser/resource/catalog/entry/cen5b2lts31Y76PIe1d6) and create a new key at https://llm.atko.ai/ui/
 
 ### 1. Clone Repository
 
