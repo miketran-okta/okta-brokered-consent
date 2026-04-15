@@ -24,6 +24,8 @@ Unlike traditional OAuth where each application manages its own consent flow, Ok
 
 ---
 
+[Internal Confluence article for more details](https://oktainc.atlassian.net/wiki/spaces/eng/pages/719676386/AI+agent+OAuth+STS+app+integration+guide)
+
 ## Architecture Overview
 
 ```
@@ -211,8 +213,6 @@ cd okta-brokered-consent
 cd backend
 
 # Create Python virtual environment (Python 3.10+)
-python -m venv venv
-# or python3 depending on your environment setup
 python3 -m venv venv
 
 source venv/bin/activate  # On Windows: venv\Scripts\activate
@@ -258,8 +258,6 @@ LOG_LEVEL=INFO
 **Start backend:**
 
 ```bash
-python -m uvicorn api.main:app --reload --port 8000
-# or python 3
 python3 -m uvicorn api.main:app --reload --port 8000
 ```
 
