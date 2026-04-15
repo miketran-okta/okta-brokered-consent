@@ -2,6 +2,8 @@
 
 > AI-powered DevOps assistant demonstrating **Okta Brokered Consent (OAuth-STS)** for secure GitHub integration
 
+> ### Shoutout to [oktaforai-okta](https://github.com/oktaforai-okta/O4AA-STS-Repo) who blazed the trail for this project ###
+
 [![Okta](https://img.shields.io/badge/Okta-OAuth--STS-007DC1?logo=okta)](https://developer.okta.com/)
 [![GitHub](https://img.shields.io/badge/GitHub-API-181717?logo=github)](https://docs.github.com/en/rest)
 [![FastAPI](https://img.shields.io/badge/FastAPI-0.115.0-009688?logo=fastapi)](https://fastapi.tiangolo.com/)
