@@ -92,3 +92,5 @@ id_rsa*
 # Documentation build artifacts
 docs/_build/
 docs/.doctrees/
+
+.claude

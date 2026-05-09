@@ -1,0 +1,19 @@
+{
+  "name": "okta-brokered-consent-cli",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Standalone Node script that replays the Okta Brokered Consent (OAuth-STS) flow and lists GitHub repos. No frontend or backend required.",
+  "main": "index.mjs",
+  "scripts": {
+    "start": "node index.mjs"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "dependencies": {
+    "dotenv": "^16.4.5",
+    "jose": "^5.9.6",
+    "open": "^10.1.0"
+  }
+}

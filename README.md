@@ -222,6 +222,12 @@ source venv/bin/activate  # On Windows: venv\Scripts\activate
 # Install dependencies
 pip install -r requirements.txt
 
+# If running into issues, your version of python may be too new and requires reverting to 3.13
+rm -rf backend/venv
+/opt/homebrew/bin/python3.13 -m venv backend/venv
+backend/venv/bin/pip install --upgrade pip
+backend/venv/bin/pip install -r backend/requirements.txt
+
 # Configure environment
 cp .env.example .env
 ```
